@@ -1,5 +1,5 @@
 package = "resty-redis-cluster"
-version = "1.07-1"
+version = "1.08-1"
 source = {
     url = "git://github.com/steve0511/resty-redis-cluster",
     tag = "1.05",
