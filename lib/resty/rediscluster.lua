@@ -67,7 +67,6 @@ local function check_auth(self, redis_client)
         local count, err = redis_client:get_reused_times()
         if count == 0 then
             local _
-            print("Trying auth with default, ", self.config.auth)
             _, err = redis_client:auth("default", self.config.auth)
         end
 
@@ -124,8 +123,6 @@ local function try_hosts_slots(self, serv_list)
                 table_insert(errors, max_connection_timeout_err)
                 break
             end
-
-            print(self.config.connect_opts, 'connect opts')
 
             ok, err = redis_client:connect(ip, port, self.config.connect_opts)
             if ok then break end
