@@ -124,6 +124,8 @@ local function try_hosts_slots(self, serv_list)
                 break
             end
 
+
+            ngx.log("IP port", "************************************************", ip, port)
             ok, err = redis_client:connect(ip, port, self.config.connect_opts)
             if ok then break end
             if err then
